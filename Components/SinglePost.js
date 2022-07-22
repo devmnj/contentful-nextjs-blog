@@ -1,5 +1,3 @@
-import { useQuery } from 'urql';
-
 function Post(props) {
 
     return (
@@ -8,12 +6,13 @@ function Post(props) {
                 <article className="  flex-col space-y-8 dark:bg-gray-800 dark:text-gray-50">
                     <div className="space-y-6">
                         <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
-                            {props.post?.title}
+                            {props.title}
                         </h1>
                         <div>
-                            <summary>{props.post.excerpt}</summary>
+                            <summary>{props.summary}</summary>
                         </div>
-                        <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
+                        <div
+                            className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
                             <div className="flex items-center md:space-x-2">
                                 <img
                                     src="https://source.unsplash.com/random/?face&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -21,7 +20,7 @@ function Post(props) {
                                     className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
                                 />
                                 <p className="text-sm">
-                                    {props.post.postAuthor || "Leroy Jenkins"} • July 19th, 2021
+                                    Leroy Jenkins • July 19th, 2021
                                 </p>
                             </div>
                             <p className="flex-shrink-0 mt-3 text-sm md:mt-0">
@@ -30,39 +29,39 @@ function Post(props) {
                         </div>
                     </div>
                     <div>
-                        <img src={props.post.featured_image} />
+                        <img src={props.image} />
                     </div>
                     <div className="dark:text-gray-100">
                         <p>
-                            {props.post.content || "Insert the actual text content here..."}
+                            {props.content || "Insert the actual text content here..."}
                         </p>
                     </div>
                 </article>
                 <div>
                     <div className="flex flex-wrap py-6 space-x-2 border-t border-dashed dark:border-gray-400">
-                        <Tag name={props.post.tag} />
+                        {/*<Tag name={props.post.tag} />*/}
                     </div>
                     <div className="space-y-2 text-white">
                         <h4 className="text-lg  font-semibold">Comments</h4>
 
-                        <PostComment comment={props.post.userComments[0].body} />
+                        {/*<PostComment comment={props.post.userComments[0].body} />*/}
                     </div>
                     <div className="space-y-2 mt-3 text-white">
                         <h4 className="text-lg  font-semibold">Related posts</h4>
-                        <RelatedPosts tag={props.post.tag} />
+                        {/*<RelatedPosts tag={props.post.tag} />*/}
                     </div>
                 </div>
             </div>
         </>
     );
 }
-
 export default function SinglePost(props) {
-
-
+    console.log(props.post)
     return (
         <>
-            <Post post={props.post} />
+            {/*{JSON.stringify(props.post.fields.content.content[0].content[0].value)}*/}
+            < Post title={props.post.fields.title} summary={props.post.fields.summary}
+                   content={props.post.fields.content.content[0].content[0].value} image={props.post.fields.featuredImage.fields.file.url}/>
         </>
     );
 }
@@ -82,7 +81,7 @@ function RelatedPosts(props) {
     const [result, reexecuteQuery] = useQuery({
         query: query,
     });
-    const { data, fetching, error } = result;
+    const {data, fetching, error} = result;
 
     if (fetching) return <p>Loading...</p>;
     if (error) return <p>Oh no... {error.message}</p>;

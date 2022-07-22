@@ -1,7 +1,7 @@
 import React from 'react'
-import M404 from '../Components/Astro/404'
+import PNF from "../Components/PNF";
 export default function ErrorPage() {
   return (
-    <M404/>
+    <PNF/>
   )
 }

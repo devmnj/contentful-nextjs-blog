@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<h3 align="center">Contentful-Nextjs Blog</h3>
 
-First, run the development server:
+<div align="center">
 
-```bash
-npm run dev
-# or
+[![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+---
+
+<p align="center"> This is a blog using Nextjs , Contentful Headless CMS and TailwindCSS
+    <br> 
+</p>
+
+## 📝 Table of Contents
+
+- [About](#about)
+  - [Prerequisites](#-prerequisites-)
+  - [BackEnd](#Graphql)
+- [Built Using](#built_using)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+## 🧐 About <a name = "about"></a>
+
+This is a blog project using **Contentful CMS** and Nextjs and React.
+ 
+
+### 🔎  Contentful CMS <a name = "cms"></a>
+For the project I have used the Contentful CMS, to work with your own data need to register an account on contentful site and grab the credentials from Settings and configure it with **Contentful** module.
+ 
+### 🧒 Prerequisites <a name = "Prerequisites"></a>
+
+You have to familiar with Javascript frameworks such as `React,Nextjs` and `HTML`,`CSS` and of course the `Javascript` inorder to work with this project.
+
+## ⌚ Using the project
+
+Fork the repo and install dependencies, that's all you need. ⛏️. 
+### Install dependencies
+```
+
+yarn install
+```
+### Running the project
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ 
+ will start the project.
+ 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 🚀  Built Using <a name = "built_using"></a>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Nextjs](https://nextjs.org/) 
+- [Tailwindcss](https://tailwindcss.com/) 
+- [Contentful Headless CMS](https://contentful.com/)
+- [Vitejs](https://vitejs.dev/) - Build Tool
+- [NodeJs](https://nodejs.org/en/) - Server Environment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ✍️ Authors <a name = "authors"></a> and Guides
+- [@devmnj](https://github.com/devmnj) - Idea & Initial work
+- [JSU](http://javascriptsu.wordpress.com/tag/solidjs) - More guides
+- [JSSDO](http://jssudo.blogpost.com)
+- [Imgur-for fun](https://imgur.com/user/devshots/posts)
 
-## Learn More
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Thank for awesome `Mamba` template

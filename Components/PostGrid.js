@@ -15,7 +15,7 @@ export default function PostGrid(props) {
             {" "}
 
             {props.posts && props.posts.map((post)=>(
-                <span className='text-red'key={post.id}>{ <PostCard  post={post}/>}</span>
+                <span className='text-red'key={post.sys.id}>{ <PostCard  post={post}/>}</span>
             ))}
         
             {" "}
@@ -66,9 +66,9 @@ function Author(props) {
         />
         <div>
           <h3 className="text-sm font-medium">Leroy Jenkins</h3>
-          <time datetime="2021-02-18" className="text-sm dark:text-gray-400">
+          {/*<time datetime="2021-02-18" className="text-sm dark:text-gray-400">*/}
             Feb 18th 2021
-          </time>
+          {/*</time>*/}
         </div>
       </div>
     </>
@@ -76,9 +76,9 @@ function Author(props) {
 }
 export function PostCard(props) {
   return (
-    <>
-      {/* <a
-        href={`/post/${props.post}`}
+    <div style={{width: '350px',height:'400px'}} className="bg-gray-900">
+       <a
+        href={`/post/${props.post.sys.id}`}
         rel="noopener noreferrer"
         className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900"
       >
@@ -96,10 +96,10 @@ export function PostCard(props) {
           <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
             {props.post.fields.title || "In usu laoreet repudiare legendos"}
           </h3>
-          <p className="align-baseline">{props.post.fields.Summary}</p>
+          <p className="align-baseline">{props.post.fields.summary}</p>
         </div>
 
-      </a> */}
-    </>
+      </a>
+    </div>
   );
 }
